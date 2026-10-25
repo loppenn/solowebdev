@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Веб-разработчик — сайты на заказ</title>
+<meta name="description" content="Создаю сайты на заказ: лендинги, сайты-визитки, портфолио. Стоимость — от $200.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efeae0;--ink:#12110f;--mute:#5d5850;--acc:#ff4b1f;--line:#12110f26;--h:'Unbounded',Georgia,sans-serif;--b:'Onest',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--b);overflow-x:hidden}
+a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--h);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(30px,5vw,56px);margin-bottom:40px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+header{position:sticky;top:0;z-index:5;background:#efeae0ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+nav{display:flex;gap:28px;font-size:15px}nav a{text-decoration:none}nav a:hover{color:var(--acc)}
+.logo{font:700 15px var(--h);text-decoration:none}.logo i{color:var(--acc);font-style:normal}
+.btn{display:inline-block;border:2px solid var(--ink);background:var(--ink);color:var(--bg);padding:14px 26px;font:500 16px var(--b);cursor:pointer;text-decoration:none;transition:.25s}
+.btn:hover{background:var(--acc);border-color:var(--acc)}.btn.o{background:none;color:var(--ink)}.btn.o:hover{background:var(--ink);color:var(--bg)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.hero{padding:72px 0 96px;border:0}.hero .w{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,6.4vw,86px)}.hero h1 em{color:var(--acc);font-style:normal}
+.hero p{max-width:520px;margin:28px 0 36px;color:var(--mute);font-size:19px}.cta{display:flex;gap:14px;flex-wrap:wrap}
+.scroll{margin-top:48px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}.scroll b{display:inline-block;animation:bob 1.6s infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+.mock{border:2px solid var(--ink);background:#fff;box-shadow:12px 12px 0 var(--ink);transition:transform .3s}
+.mock:hover{transform:translate(-4px,-4px)}
+.bar{height:30px;border-bottom:2px solid var(--ink);display:flex;gap:6px;align-items:center;padding:0 10px}.bar i{width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.scr{aspect-ratio:4/3;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;position:relative;overflow:hidden}
+.scr h4{font:700 clamp(20px,2.4vw,30px)/1 var(--h)}.scr small{opacity:.75;font-size:13px}.scr .blob{position:absolute;right:-30px;top:-30px;width:55%;aspect-ratio:1;border-radius:50%}
+.svc{list-style:none;padding:0}.svc li{display:grid;grid-template-columns:70px 1fr 1.3fr;gap:24px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline;transition:padding .3s}
+.svc li:hover{padding-left:14px}.svc span{font:500 14px var(--h);color:var(--acc)}.svc h3{font-size:22px}.svc p{color:var(--mute)}
+.note{margin-top:28px;color:var(--mute);max-width:640px}
+.pf{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}.pf button{all:unset;cursor:pointer;display:block}
+.pf .tag{display:inline-block;margin:18px 0 6px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}.pf h3{font-size:20px;margin-bottom:6px}.pf p{color:var(--mute);font-size:15px}
+.price{background:var(--ink);color:var(--bg);border:0}.price h2{max-width:900px}.price h2 em{color:var(--acc);font-style:normal}.price p{max-width:620px;color:#cfc8ba;margin-bottom:34px}
+.price .btn{background:var(--acc);border-color:var(--acc);color:#12110f}.price .btn:hover{background:var(--bg);border-color:var(--bg)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;list-style:none;padding:0}.steps b{display:block;font:700 44px var(--h);color:var(--acc);margin-bottom:14px}.steps h3{font-size:18px;margin-bottom:10px}.steps p{color:var(--mute);font-size:15px}
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+dialog{border:2px solid var(--ink);background:var(--bg);color:var(--ink);padding:0;width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 24px);box-shadow:12px 12px 0 var(--ink)}
+dialog::backdrop{background:#12110fb8}dialog[open]{animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:translateY(16px)}}
+.dv{padding:32px;position:relative}.dv h2{font-size:26px;margin-bottom:12px}.x{position:absolute;right:12px;top:10px;background:none;border:0;font-size:28px;cursor:pointer;color:var(--ink)}
+.f{margin-top:20px}label{display:block;font-weight:500;margin-bottom:6px}.help{font-size:13px;color:var(--mute);margin-top:4px}
+input,textarea{width:100%;font:inherit;padding:12px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:0}textarea{min-height:130px;resize:vertical}
+[aria-invalid=true]{border-color:#c4180b}.err{color:#c4180b;font-size:14px;margin-top:4px;min-height:0}.cnt{float:right;font-size:13px;color:var(--mute)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sum{border:2px solid var(--ink);padding:14px;margin:12px 0;background:#fff;white-space:pre-wrap;overflow-wrap:anywhere;max-height:30dvh;overflow:auto}.sum small{display:block;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.ld{width:44px;height:44px;border:4px solid var(--line);border-top-color:var(--acc);border-radius:50%;animation:sp 1s linear infinite;margin-bottom:16px}@keyframes sp{to{transform:rotate(360deg)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero .w,.pf,.steps{grid-template-columns:1fr}.steps{gap:36px}nav{display:none}.svc li{grid-template-columns:44px 1fr}.svc p{grid-column:2}section{padding:64px 0}.dv{padding:24px 18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<header><div class="w"><a class="logo" href="#top" aria-label="В начало страницы">solo<i>.</i>webdev</a>
+<nav aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#portfolio">Портфолио</a><a href="#price">Стоимость</a><a href="#process">Как я работаю</a></nav>
+<button class="btn" data-open>Оставить заявку</button></div></header>
+<main id="top">
+<section class="hero"><div class="w"><div>
+<h1 class="rv">Сайты, которые <em>запоминаются</em></h1>
+<p class="rv">Разрабатываю сайты на заказ: от лендинга до многостраничного проекта. Продуманный дизайн, аккуратный код и внимание к каждой детали — под задачи именно вашего бизнеса.</p>
+<div class="cta rv"><button class="btn" data-open>Обсудить проект</button><a class="btn o" href="#portfolio">Смотреть портфолио</a></div>
+<div class="scroll">Листайте вниз <b aria-hidden="true">↓</b></div></div>
+<div class="mock rv" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:#ff4b1f;color:#12110f"><div class="blob" style="background:#12110f"></div><h4>Ваш сайт<br>начинается здесь</h4><small>Концепт дизайна</small></div></div>
+</div></section>
+<section id="services"><div class="w"><h2 class="rv">Чем могу помочь</h2>
+<ul class="svc rv">
+<li><span>01</span><h3>Лендинги</h3><p>Одностраничные сайты для продукта, услуги или акции.</p></li>
+<li><span>02</span><h3>Сайты-визитки</h3><p>Презентация бизнеса: о компании, услуги, контакты.</p></li>
+<li><span>03</span><h3>Сайты-портфолио</h3><p>Для дизайнеров, фотографов и других творческих специалистов.</p></li>
+<li><span>04</span><h3>Сайты для кафе и барбершопов</h3><p>Для локального бизнеса: меню, услуги, адрес, как добраться.</p></li>
+<li><span>05</span><h3>Индивидуальный дизайн</h3><p>Уникальный визуальный стиль вместо шаблона.</p></li>
+<li><span>06</span><h3>Анимации и интерактив</h3><p>Плавные появления, hover-эффекты и другие детали, которые оживляют сайт.</p></li>
+<li><span>07</span><h3>Адаптивный редизайн</h3><p>Обновление существующего сайта и корректное отображение на телефонах.</p></li>
+</ul>
+<p class="note rv">Состав работ и функциональность подстраиваются под ваш проект. Если нужного пункта нет в списке, опишите задачу в заявке — обсудим, что можно реализовать.</p>
+<div class="row"><button class="btn" data-open>Описать задачу</button></div></div></section>
+<section id="portfolio"><div class="w"><h2 class="rv">Портфолио</h2><div class="pf rv" id="pf"></div>
+<p class="note">Это демонстрационные концепты, а не работы для реальных клиентов. Они показывают, какого уровня дизайна можно ожидать.</p></div></section>
+<section class="price" id="price"><div class="w"><h2 class="rv">Стоимость создания сайта — <em>от $200</em></h2>
+<p>Итоговая стоимость зависит от сложности проекта, количества страниц, необходимых функций и уровня индивидуального дизайна. Каждый проект оценивается отдельно: точную сумму мы обсудим после знакомства с вашими требованиями.</p>
+<button class="btn" data-open>Рассчитать стоимость проекта</button></div></section>
+<section id="process"><div class="w"><h2 class="rv">Как проходит работа</h2><ol class="steps rv">
+<li><b>01</b><h3>Обсуждаем идею</h3><p>Вы рассказываете, какой сайт нужен, какие задачи он должен решать и какой результат ожидаете.</p></li>
+<li><b>02</b><h3>Определяем направление</h3><p>Изучаю требования и предлагаю подходящую визуальную концепцию.</p></li>
+<li><b>03</b><h3>Создаю сайт</h3><p>Разрабатываю сайт с вниманием к дизайну, удобству, функциональности и адаптации под разные устройства.</p></li>
+<li><b>04</b><h3>Проверяем результат</h3><p>Проверяю работу сайта, устраняю ошибки и вношу доработки, согласованные заранее.</p></li></ol></div></section>
+</main>
+<footer><div class="w"><span>© <span id="yr"></span> Веб-разработка на заказ</span><span>Связь по заявке — через Telegram</span></div></footer>
+
+<dialog id="dlg" aria-labelledby="t1">
+<div class="dv" id="v-form"><button class="x" data-close aria-label="Закрыть форму">×</button>
+<h2 id="t1">Заявка на создание сайта</h2><p class="help">Два поля — и я свяжусь с вами.</p>
+<form id="form" novalidate>
+<div class="f"><label for="tg">Ваш Telegram username</label><input id="tg" name="tg" placeholder="@username" autocomplete="off" aria-describedby="h-tg e-tg"><div class="help" id="h-tg">Укажите ваш Telegram username, чтобы я мог связаться с вами и обсудить детали проекта.</div><div class="err" id="e-tg" role="alert"></div></div>
+<div class="f"><label for="ds">Опишите ваш будущий сайт <span class="cnt" id="cnt">0 / 3000</span></label><textarea id="ds" maxlength="3000" placeholder="Расскажите, для чего нужен сайт, какой дизайн вам нравится, какие разделы и функции должны быть реализованы и какие у вас есть пожелания..." aria-describedby="e-ds"></textarea><div class="err" id="e-ds" role="alert"></div></div>
+<div class="f"><label for="rf">Примеры сайтов, которые вам нравятся (необязательно)</label><textarea id="rf" style="min-height:70px" placeholder="Вставьте ссылки на сайты, дизайн или функциональность которых вам нравятся" aria-describedby="e-rf"></textarea><div class="err" id="e-rf" role="alert"></div></div>
+<div class="hp" aria-hidden="true"><label>Не заполняйте это поле<input id="hp" tabindex="-1" autocomplete="off"></label></div>
+<div class="row"><button class="btn" type="submit">Продолжить</button></div></form></div>
+<div class="dv" id="v-review" hidden><h2>Проверьте данные заявки</h2><p>Пожалуйста, убедитесь, что все данные указаны правильно. После подтверждения заявка будет отправлена.</p>
+<div class="sum"><small>Telegram</small><span id="s-tg"></span></div><div class="sum"><small>Описание проекта</small><span id="s-ds"></span></div><div class="sum" id="s-rfw"><small>Примеры сайтов</small><span id="s-rf"></span></div>
+<div class="err" id="e-send" role="alert"></div>
+<div class="row"><button class="btn o" id="back">Вернуться и изменить</button><button class="btn" id="send">Подтвердить и отправить</button></div></div>
+<div class="dv" id="v-state" hidden role="status" aria-live="polite"><div id="st"></div></div>
+</dialog>
+<script>
+const $=s=>document.querySelector(s),dlg=$('#dlg'),V=['form','review','state'];
+const show=v=>V.forEach(n=>$('#v-'+n).hidden=n!==v);
+let busy=false,rid=crypto.randomUUID(),D=null;
+$('#yr').textContent=new Date().getFullYear();
+// Demo projects: replace this array with real work later (add image / link fields as needed)
+const PROJECTS=[
+{t:'Кофейня «Зерно»',k:'Демонстрационный проект',d:'Сайт кофейни: меню, атмосфера, адрес.',bg:'#2b1d14',fg:'#f3e6d3',ac:'#d98a3d'},
+{t:'Барбершоп «Бритва»',k:'Концепт дизайна',d:'Услуги, мастера и онлайн-запись.',bg:'#12110f',fg:'#efeae0',ac:'#ff4b1f'},
+{t:'Бюро интерьеров',k:'Концепт дизайна',d:'Портфолио интерьерного дизайнера.',bg:'#dfe4dc',fg:'#1d2a22',ac:'#6c8a76'}];
+$('#pf').innerHTML=PROJECTS.map(p=>`<article><div class="mock" role="img" aria-label="Макет сайта: ${p.t}"><div class="bar"><i></i><i></i><i></i></div><div class="scr" style="background:${p.bg};color:${p.fg}"><div class="blob" style="background:${p.ac}"></div><h4>${p.t}</h4><small>${p.d}</small></div></div><span class="tag">${p.k}</span><h3>${p.t}</h3><p>${p.d}</p></article>`).join('');
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{show('form');dlg.showModal()});
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>dlg.close());
+dlg.addEventListener('cancel',e=>{if(busy)e.preventDefault()});
+$('#ds').oninput=e=>$('#cnt').textContent=e.target.value.length+' / 3000';
+function err(id,f,m){$('#e-'+id).textContent=m||'';(m?$('#'+f).setAttribute('aria-invalid','true'):$('#'+f).removeAttribute('aria-invalid'))}
+function validate(){
+ const tg=$('#tg').value.trim(),ds=$('#ds').value.trim(),rf=$('#rf').value.split(/[\s,]+/).filter(Boolean);let ok=true,first=null;
+ const bad=(id,f,m)=>{err(id,f,m);ok=false;first=first||$('#'+f)};
+ if(!tg)bad('tg','tg','Укажите ваш Telegram username.');else if(!/^@?[A-Za-z][A-Za-z0-9_]{4,31}$/.test(tg)||tg.endsWith('_'))bad('tg','tg','Некорректный username: 5–32 символа, латинские буквы, цифры и «_», первая — буква.');else err('tg','tg');
+ if(!ds)bad('ds','ds','Расскажите немного о будущем сайте.');else err('ds','ds');
+ let rm='';if(rf.length>5)rm='Можно указать не более 5 ссылок.';else for(const u of rf){try{if(!/^https?:$/.test(new URL(u).protocol)||u.length>200)throw 0}catch{rm='Проверьте ссылки: нужны адреса вида https://example.com (до 200 символов).';break}}
+ rm?bad('rf','rf',rm):err('rf','rf');
+ if(!ok){first.focus();return null}
+ return{telegram:tg.startsWith('@')?tg:'@'+tg,description:ds,references:rf}
+}
+$('#form').onsubmit=e=>{e.preventDefault();D=validate();if(!D)return;
+ $('#s-tg').textContent=D.telegram;$('#s-ds').textContent=D.description;$('#s-rf').textContent=D.references.join('\n');$('#s-rfw').hidden=!D.references.length;$('#e-send').textContent='';show('review');$('#send').focus()};
+$('#back').onclick=()=>{show('form');$('#tg').focus()};
+function state(h,p,btn,fn){$('#st').innerHTML='';const a=document.createElement('h2');a.textContent=h;const b=document.createElement('p');b.textContent=p;$('#st').append(a,b);if(btn){const c=document.createElement('button');c.className='btn';c.style.marginTop='20px';c.textContent=btn;c.onclick=fn;$('#st').append(c)}}
+$('#send').onclick=async()=>{if(busy||!D)return;busy=true;$('#send').disabled=true;show('state');
+ $('#st').innerHTML='<div class="ld"></div><h2>Отправляем вашу заявку...</h2>';
+ try{const r=await fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...D,website:$('#hp').value,requestId:rid})});
+  const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw 0;
+  rid=crypto.randomUUID();$('#form').reset();$('#cnt').textContent='0 / 3000';D=null;
+  state('Заявка успешно отправлена!','Спасибо за обращение! Я изучу ваши пожелания и свяжусь с вами в Telegram, чтобы обсудить детали проекта.','Отлично',()=>dlg.close());
+ }catch{show('review');$('#e-send').textContent='Не удалось отправить заявку. Попробуйте ещё раз немного позже.'}
+ finally{busy=false;$('#send').disabled=false}};
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&(e.target.classList.add('in'),io.unobserve(e.target))),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script></body></html>
